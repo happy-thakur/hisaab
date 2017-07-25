@@ -1,0 +1,110 @@
+
+<div class="happ-main-div" [style.background-image]="'url(./assets/bg/bg3.jpg)'">
+	
+	<div class="container no-div" style="margin-top: 100px;" id="inner-signup" >
+		<div class="happ-inner-div" *ngIf="!showLogin">
+			<div>
+				<div class="card card-signup">
+					<form class="form">
+						<div class="header header-primary text-center">
+							<h4>Sign Up</h4>
+							<div class="social-line">
+								<a (click)="signup(0)" title="Google" class="btn btn-simple btn-just-icon">
+                  					<i class="fa fa-google-plus"></i>
+								</a>
+								<a (click)="signup(1)" title="Github" class="btn btn-simple btn-just-icon">
+                  					<i class="fa fa-github-square" aria-hidden="true"></i>
+								</a>
+								<a (click)="signup(2)" title="Facebook" class="btn btn-simple btn-just-icon">
+									<i class="fa fa-facebook-official" aria-hidden="true"></i>
+								</a>
+								<a (click)="signup(3)" title="Twitter" class="btn btn-simple btn-just-icon">
+                  					<i class="fa fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+						<p class="text-divider">Or Be Classical</p>
+						<div class="content">
+
+						
+				 				<input type="text" required class="form-control" name="name" [(ngModel)]="signupData.name" placeholder="First Name...">
+
+
+								<input type="email" required [(ngModel)]="signupData.email" name="email" class="form-control" placeholder="Email...">
+
+
+
+								<input type="password" required [(ngModel)]="signupData.password" name="password" placeholder="Password..." class="form-control" />
+
+							<div class="happ-alert" role="alert" *ngIf="!allright['signup']">
+								{{allright['signupMess']}}
+							</div>
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a (click)="emailAndPassSignup()" class="btn btn-simple btn-lg">Get Started</a>
+									<a (click)="showLogin = !showLogin" class="btn btn-simple btn-lg">Login</a>
+
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- login -->
+				<div class="happ-inner-div" *ngIf="showLogin">
+					<div>
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-primary text-center">
+									<h4>Login</h4>
+									<div class="social-line">
+										<a (click)="signup(0)" title="Google" class="btn btn-simple btn-just-icon">
+											<i class="fa fa-facebook-square"></i>
+										</a>
+										<a (click)="signup(1)" title="Github" class="btn btn-simple btn-just-icon">
+											<i class="fa fa-twitter"></i>
+										</a>
+										<a (click)="signup(2)" title="Facebook" class="btn btn-simple btn-just-icon">
+											<i class="fa fa-google-plus"></i>
+										</a>
+										<a (click)="signup(3)" title="Twitter" class="btn btn-simple btn-just-icon">
+											<i class="fa fa-google-plus"></i>
+										</a>
+									</div>
+								</div>
+								<p class="text-divider">Or Be Classical</p>
+								<div class="content">
+
+  
+
+										<input type="email" required [(ngModel)]="loginData.email" name="email" class="form-control" placeholder="Email...">
+
+		
+										<input type="password" required [(ngModel)]="loginData.password" name="password" placeholder="Password..." class="form-control" />
+										<a (click)="forgotPass()" >Forgot Password..</a>
+									<div class="alert alert-alert" role="alert" *ngIf="!allright['login']">
+										{{allright['loginMess']}}
+									</div>
+								</div>
+								<div class="footer text-center">
+									<a (click)="login()" class="btn btn-simple btn-lg">Login</a>
+									<a class="btn btn-simple btn-lg" (click)="showLogin = !showLogin">New User</a>
+
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>

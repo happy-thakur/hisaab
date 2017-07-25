@@ -1,0 +1,37 @@
+
+
+
+<ion-content padding>
+
+  <!--<ion-item>-->
+    <!--<img src="./assets/images/background.jpg" class="happ-image-login">-->
+  <!--</ion-item>-->
+
+     <!-- <h3 style="text-align: center;">Login with</h3>  -->
+  <div class="happ-login-logo">
+    <ion-icon name="logo-facebook" style="color: #3c5a98;"></ion-icon>
+    <ion-icon name="logo-googleplus"></ion-icon>
+    <ion-icon name="logo-twitter"></ion-icon>
+    <ion-icon name="logo-github"></ion-icon>
+  </div>
+    
+    <!-- <h3 style="text-align: center;">OR</h3> -->
+
+   <ion-item>
+    <ion-label color="primary" floating>Phone No.</ion-label>
+    <ion-input type="tel" name="phone_no" [(ngModel)]="login.phone_no" ></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label color="primary" floating>Password</ion-label>
+    <ion-input type="password" name="password" [(ngModel)]="login.password" ></ion-input>
+  </ion-item>
+
+<ion-item no-border>
+</ion-item>
+  <button ion-button block (click)="loginSubmit()">Login</button>
+  <p>Forgot Password..</p>
+
+  <span>Don't have account. Then Register here..</span>
+  <button ion-button block (click)="signupSubmit()">Signup</button>
+</ion-content>

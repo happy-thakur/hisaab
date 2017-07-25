@@ -1,0 +1,59 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Setting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-content class="card-background-page">
+    <ion-card center class="heading-center">
+      <h1 color="primary" > {{ globalVars.name }} ({{ globalVars.phone_no }}) </h1>
+    </ion-card>
+    <ion-card>
+      
+      <img src="{{ globalVars.profile_url }}" />
+    </ion-card>
+  
+<!--<button ion-button (click)="profileSetting()" >-->
+  <ion-card>
+    <ion-card-header>
+      <h2 color="primary" >Profile Setting</h2>
+    </ion-card-header>
+    <ion-card-content>
+      Here you can change the account profile Pics, Name and Phone No...
+      <ion-item>
+        {{ globalVars.name }}
+        <ion-icon name="create" color="primary" right (click)="editNameOrEmail('Name')" >
+        </ion-icon>
+      </ion-item>
+      <ion-item>
+        {{ globalVars.email }}
+        <ion-icon name="create" color="primary" right (click)="editNameOrEmail('Email')" >
+        </ion-icon>
+      </ion-item>
+      <ion-item>
+        Edit passowrd..
+        <ion-icon name="create" color="primary" right (click)="editPassowrd()" >
+        </ion-icon>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+<!--</button>-->
+  <ion-card>
+    <ion-card-header>
+      <h2 color="primary" >Delete Account..</h2>
+    </ion-card-header>
+    <ion-card-content>
+      You Can Delete the acount only when all the groups have been cleared i.e. no due present in any group..
+      <button ion-button (click)="delete()" block color="primary" >Delete Account..</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+</ion-content>

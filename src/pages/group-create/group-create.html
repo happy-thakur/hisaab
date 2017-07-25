@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create New Group</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+      <ion-label color="primary" floating>Group Name</ion-label>
+      <ion-input name="name" [(ngModel)]="create.group_name" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating> {{ Author }} </ion-label>
+      <ion-input name="self_member" disabled="true" value="{{ phone_no }}" ></ion-input>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-label color="primary" floating>Member Name 1 (Phone No) </ion-label>
+      <ion-input name="member" (blur)="decrease(i+1)" [(ngModel)]="create.member" ></ion-input>
+    </ion-item>
+    
+    <ion-item *ngFor="let member of members; let i = index" >
+      <ion-label color="primary" floating>Member name {{ i + 2 }} (Phone No) </ion-label>
+      <ion-input name="member" (blur)="decrease(i+1)" [(ngModel)]="create['member'+(i+1)]" ></ion-input>
+    </ion-item>
+
+    <button ion-button color="primary" block (click)="groupCreateSubmit()" >Create Group..</button>
+
+   
+</ion-content>

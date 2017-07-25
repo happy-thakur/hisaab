@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{ content.group_name }} <span ion-text color="price-color"> ({{ globalVars.total }}) </span> </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!--<button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>-->
+
+    <!--<ion-grid>
+      <ion-row>
+        <h2> {{ content.name }} </h2>
+      </ion-row>
+      <ion-row>
+        <ion-col width-20>
+          <p> Cost: </p>
+        </ion-col>
+        <ion-col width-80>
+          <p ion-text color="price-color"> {{ content.cost }} </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-20>
+          <p> Items: </p>
+        </ion-col>
+        <ion-col width-80>
+          <p> {{ content.item }} </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-20>
+          <p> Date: </p>
+        </ion-col>
+        <ion-col width-80>
+          <p> {{ content.date }} </p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let member of members">
+        <ion-list>
+          <ion-item>
+            {{ member.name }}
+            {{ content.approved[member.phone_no] }}
+          </ion-item>
+        </ion-list>
+      </ion-row>
+
+
+    </ion-grid>-->
+
+    <ion-card>
+      <ion-item>
+          <ion-avatar item-left>
+            <img [src]="(content.male == '0')? './assets/images/female.jpg':'./assets/images/male.jpg'">
+          </ion-avatar>
+          <h2 class="happ-heading">{{content.name}}</h2>
+          <p> {{ content.phone_no }} </p>
+        </ion-item>
+
+        <!--<img src="img/advance-card-bttf.png">-->
+
+        <ion-card-content>
+            <ion-row>
+              <ion-col> Item
+              </ion-col>
+              <ion-col>
+                {{ content.item }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                Cost
+              </ion-col>
+              <ion-col>
+                {{ content.cost }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                Date
+              </ion-col>
+              <ion-col>
+                {{ content.date | date: "dd/MM/yyyy" }}
+              </ion-col>
+            </ion-row>
+
+             <ion-row>
+              <ion-col>
+                Upload Date
+              </ion-col>
+              <ion-col>
+                {{ (content.timeAgo == null) ? '0 sec ago' : content.timeAgo }}
+              </ion-col>
+            </ion-row>
+
+             <ion-row>
+              <ion-col>
+                Hisaab Done
+              </ion-col>
+              <ion-col>
+                {{ content.done }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <h2>Approved By:</h2>
+            </ion-row>
+
+            <ion-row *ngFor="let member of globalVars.members" >
+              <ion-item>
+                <ion-toggle disabled="{{ member.phone_no !== phone_no }}" (ionChange)="toggle(member)" checked="{{ content.approved[member.phone_no] == 1 }}"></ion-toggle>
+                <ion-label>
+                   {{ member.name }}
+            
+                </ion-label>
+                 <ion-avatar item-left>
+                  <img [src]="(member.male == '0')? './assets/images/female.jpg':'./assets/images/male.jpg'">
+                </ion-avatar>
+              </ion-item>
+            </ion-row>
+        </ion-card-content>
+
+        <!--<ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>12 Likes</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>-->
+
+      </ion-card>
+
+
+  </ion-list>
+  <!--<div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>-->
+</ion-content>

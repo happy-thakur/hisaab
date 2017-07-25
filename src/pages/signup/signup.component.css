@@ -1,0 +1,95 @@
+div.happ-main-div {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+div.happ-inner-div {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: 450px;
+	height: 100%;
+	background: orange; 
+	padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.header h4 {
+    color: white;
+    font-size: 250%;
+    font-weight: 700;
+    font-family: cursive;
+    margin-bottom: 30px;
+}
+
+div.header a.btn-just-icon {
+    font-size: 20px;
+    color: black;
+}
+div.header a.btn-just-icon:hover {
+	transform: scale(1.5);
+}
+div.footer{
+	margin-top: 15px;
+}
+div.footer a.btn { 
+	background: orange;
+    color: white;
+    border: 0px;
+    font-weight: 600;
+	border: 1px solid white;
+	width: 45%;
+ }
+div.footer a.btn:hover { 
+	background: white;
+    color: orange;
+}
+ div.happ-inner-div form {
+ 	width: 90%;
+ 	margin-top: -50px;
+ }
+ div.happ-inner-div input {
+ 	padding: 5px 15px;
+ 	border-radius: 3px;
+ 	border: 0px;
+ 	font-size: 18px;
+ 	margin: 5px 0px;
+
+ }
+ p.text-divider {
+ 	 margin: 25px 0px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+
+ }
+
+ div.happ-alert {
+ 	    background: antiquewhite;
+    color: firebrick;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+ }
+
+ div.social-line {
+ 	background: white;
+    border-radius: 5px;
+    margin: auto;
+    width: 90%;
+ }
+
+@media screen and (max-width: 450px){
+
+ div.happ-inner-div {
+ 	width: 100%;
+ }
+}
+

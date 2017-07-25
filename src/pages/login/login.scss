@@ -1,0 +1,19 @@
+page-login {
+    img.happ-image-login {
+        width: 95%;
+    }
+
+
+    div.happ-login-logo {
+        display: flex;
+        font-size: 200%;
+        margin-top: 5%;
+        /* padding: 0px 10px; */
+        justify-content: center;
+        ion-icon {
+            // color: #387ef5;
+            margin-right: 8px;
+            margin: 0px 5%;
+        }
+    }
+}

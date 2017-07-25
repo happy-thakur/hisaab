@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home ({{ phone_no }})</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+     <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+
+    <ion-card *ngIf="quote != null" >
+      <h2 color="primary" class="quote"> Quote: </h2>
+      <h1 class="quote" > {{ quote.quoteText }} </h1>
+       <h4 class="quote" > By: {{ quote.quoteAuthor }} </h4>
+    </ion-card>
+
+    <!--<ion-card>-->
+      <!--<h1 class="home-heading" color="primary">Sample images of Application..</h1>-->
+      <!--<ion-slides>
+        <ion-slide *ngFor="let src of imagesLink" >
+          <img class="sample-img" src="{{ src }}" alt="">
+        </ion-slide>
+      </ion-slides>-->
+    <!--</ion-card>-->
+    <ion-card *ngFor="let one of message" text-wrap>
+      <ion-item>
+        <h1 color="primary" > {{ one.title }} </h1>
+      </ion-item>
+      <ion-card-content>
+        <!--<ion-item >-->
+          <ion-row class="happ-row" *ngFor="let two of one['1']; let i= index">
+            <ion-col width-10>
+             <p> {{ i+1 }} </p>
+            </ion-col>
+            <ion-col width-90>
+             <p> {{ two }} </p>
+            </ion-col>
+          </ion-row>
+          <!--{{ one['1'] }}-->
+        <!--</ion-item>-->
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

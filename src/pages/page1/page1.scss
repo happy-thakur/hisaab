@@ -1,0 +1,32 @@
+page-page1 {
+    img.done{
+        border: 2px solid rgba(18, 193, 18, 0.93);
+    }
+    img.notDone{
+        border: 2px solid #bdbdbd;
+    }
+    ion-icon.add-button{
+        font-size: 40px;
+        margin-right: -5px;
+    }
+    ion-icon.happ-icon{
+        margin-right: 8px;
+        font-size: 35px;
+        text-align: center;
+        width: 100%;
+    }
+    p.happ-icon-text{
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+    }
+    button.happ-icon-button{
+        background: white;
+        width: 100%;
+    }
+    ion-icon.more{
+        font-size: 30px;
+        padding: 0px 3px;
+    }
+}

@@ -1,0 +1,83 @@
+<!--
+  Generated template for the Signup page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-card>
+    <ion-card-header>
+      Signup
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-icon name="logo-facebook"></ion-icon>
+      <ion-icon name="logo-googleplus"></ion-icon>
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-icon name="logo-github"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+    <ion-item>
+      <ion-label color="primary" floating>Name</ion-label>
+      <ion-input name="name" [(ngModel)]="signup.name" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color="primary" floating>Phone No.</ion-label>
+      <ion-input type="tel" name="phone_no" [(ngModel)]="signup.phone_no" ></ion-input>
+    </ion-item>
+
+    <!--<ion-item>
+      <ion-label>
+        Male
+      </ion-label>
+      <ion-radio checked="false" name="male" value="1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Female
+      </ion-label>
+      <ion-radio checked="false" name="female" value="0"></ion-radio>
+    </ion-item>-->
+
+    <ion-item>
+      <ion-label color="primary" floating>Email Id</ion-label>
+      <ion-input name="email" type="email" [(ngModel)]="signup.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Password</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="signup.password" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color="primary" floating>Confirm Password</ion-label>
+      <ion-input type="password" name="c_password" [(ngModel)]="c_password" ></ion-input>
+    </ion-item>
+
+
+   <ion-list radio-group padding [(ngModel)]="signup.male">
+    <ion-item>
+      <ion-label>Male</ion-label>
+      <ion-radio value="1"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Female</ion-label>
+      <ion-radio value="0"></ion-radio>
+    </ion-item>
+  </ion-list>
+    <button ion-button block padding (click)="signupSubmit()" >Signup</button>  
+
+</ion-content>

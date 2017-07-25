@@ -1,0 +1,32 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Group Name</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+    <h1 class="happ-heading" color="primary"> {{ data.name }}</h1>
+    <h3 class="happ-sub-heading" color="danger" >Total: {{ data.total }} </h3>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <span *ngFor="let item of globalVars.data; let i = index" >
+     <ion-item *ngIf="data['name'] == item['name']" text-wrap>
+        <ion-thumbnail item-left>
+          <img [src]="(item.male == '0')? './assets/images/female.jpg':'./assets/images/male.jpg'">
+        </ion-thumbnail>
+        <h2>{{ item.name }}  <strong color="danger"> ({{ item.cost }}) </strong> </h2>
+        <p> {{ item.item }}</p>
+        <p ion-text color="primary"> {{ item.date | date: "dd/MM/yyyy" }} </p>
+        <!--<p>Cost</p>-->
+        <button ion-button clear item-right (click)="showDetail(i)">View</button>
+      </ion-item>
+      </span>
+  </ion-list>
+</ion-content>

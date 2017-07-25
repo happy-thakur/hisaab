@@ -1,0 +1,57 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <!--<ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>-->
+    <!--<img src="./img.jpg" alt="logo">-->
+    <div class="happ-side-header">
+      <h4 class="happ-side-heading"> {{ globalVars.name }} </h4>
+      <p class="email"> {{ globalVars.email }} </p>
+      <br>
+      <p class="email"> ( {{ globalVars.phone_no }} ) </p>
+      <img src="{{ globalVars.profile_url }}" class="happ-side-profile" alt="profile" item-right>
+    </div>
+  </ion-header>
+
+  <ion-content>
+
+      <button menuClose ion-item *ngFor="let p of globalVars.pages" (click)="openPage(p)">
+        <ion-icon name="{{ p.icon }}" color="primary" md="md-{{ p.icon }}" left ></ion-icon>        
+        {{p.title}}
+      </button>
+      
+      <button menuClose class="group-button" ion-item *ngFor="let q of globalVars.group" (click)="showGroup(q['group_name'], q['group_id'])">
+        <ion-icon name="contacts" color="primary" md="md-contacts" left ></ion-icon>
+        <!--people-->
+        {{q['group_name']}}
+        <span *ngIf="globalVars.notification !== undefined && globalVars.notification[q['group_id']] !== undefined" >
+          <ion-badge item-right class="notification" *ngIf="globalVars.notification !== undefined && (globalVars.notification[q['group_id']].itemCount != 0 || globalVars.notification[q['group_id']].queryCount != 0) " > 
+            <span *ngIf="globalVars.notification[q['group_id']].itemCount != 0 || globalVars.notification[q['group_id']].itemCount != '0'">
+              {{ globalVars.notification[q['group_id']].itemCount }}
+            </span>
+            <span *ngIf="globalVars.notification[q['group_id']].queryCount != 0 || globalVars.notification[q['group_id']].queryCount != '0'">
+              {{ globalVars.notification[q['group_id']].queryCount }} 
+            </span>
+          </ion-badge>
+        </span>
+      </button>
+      
+      <!--undo-->
+      <button menuClose class="logout" ion-item (click)="logout()">
+        <ion-icon name="undo" color="primary" md="md-undo" left ></ion-icon>
+        Logout
+      </button>
+
+  </ion-content>
+
+</ion-menu>
+
+<ion-tabs>
+  <ion-tab [root]="tab1Root"></ion-tab>
+  <ion-tab [root]="tab2Root"></ion-tab>
+  <ion-tab [root]="tab3Root"></ion-tab>
+</ion-tabs>
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

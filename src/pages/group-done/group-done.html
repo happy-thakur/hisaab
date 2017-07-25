@@ -1,0 +1,77 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Complete your Hisaab..</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-card-header>
+      Request for Completing Hisaab...
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>The request will be send to all the members, and if accepted then it will be done..</p>
+      <p>Status of it will be available here.</p>
+      <button ion-button block [disabled]="hide? true: false" (click)="hisaabDone()" >
+        <span *ngIf="!hide">Request Now...</span>
+        <span *ngIf="hide">Request already made...</span>
+        </button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card *ngFor="let member of memberTotal">
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./assets/images/male.jpg">
+      </ion-avatar>
+      <h2> {{ member.name }} </h2>
+      <p> {{ member.phone_no }} </p>
+    </ion-item>
+
+    <ion-card-content>
+      <!--<p>He ha to pay 00.00 more</p>-->
+      <ion-row>
+        <ion-col>
+          <h2>Total to pay..</h2>
+        </ion-col>
+        <ion-col>
+          <h2>
+            {{ each }}
+          </h2>
+        </ion-col>  
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h2>Total given..</h2>
+        </ion-col>
+        <ion-col>
+          <h2>{{ member.total }}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <span *ngIf="each-member.total != 0" >
+            <h1 *ngIf="each-member.total > 0" >He will <span color="danger"> give {{ each-member.total }} </span> more..</h1>
+            <h1 *ngIf="each-member.total < 0"> He will <span color="danger"> get {{ (each-member.total)*-1 }} </span> more..</h1>
+          </span>
+          <h1 *ngIf="each-member.total == 0" > BALANCED: He neither give nor take.. </h1>
+        </ion-col>
+      </ion-row>
+      <!--<ion-row *ngFor="let i of query[0].detail" >
+        <span *ngIf="i.phone_no == member.phone_no" > {{ i.accepted }}  </span>
+      </ion-row>-->
+    </ion-card-content>
+
+  </ion-card>
+
+   
+</ion-content>
